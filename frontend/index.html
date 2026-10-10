@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Certificate Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Bulk Certificate Generator</h1>
+            <p>Generate and manage participation certificates in one request.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Create Certificates</h2>
+            <p class="description">
+                Enter event details and add all recipients below.
+            </p>
+
+            <form id="certificateForm">
+                <label for="eventName">Event Name</label>
+                <input type="text" id="eventName" name="eventName"
+                       placeholder="e.g. Python Workshop"
+                       maxlength="200" required>
+
+                <div class="recipient-heading">
+                    <h3>Recipients</h3>
+                    <button type="button" id="addRecipient"
+                            class="secondary-button">
+                        + Add Recipient
+                    </button>
+                </div>
+
+                <div id="recipientsContainer">
+                    <div class="recipient-row">
+                        <div class="field">
+                            <label for="recipientName1">Recipient Name</label>
+                            <input type="text" id="recipientName1"
+                                   class="recipient-name"
+                                   placeholder="Full name"
+                                   maxlength="100" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="recipientEmail1">Email Address</label>
+                            <input type="email" id="recipientEmail1"
+                                   class="recipient-email"
+                                   placeholder="name@example.com" required>
+                        </div>
+
+                        <button type="button" class="remove-button"
+                                aria-label="Remove recipient" disabled>
+                            Remove
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Must remain type="submit" for the JavaScript handler. -->
+                <button type="submit" id="generateButton"
+                        class="primary-button">
+                    Generate Certificates
+                </button>
+
+                <p id="formMessage" class="message"
+                   role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="card" id="jobSection" hidden>
+            <h2>Generation Status</h2>
+            <p>Job ID: <strong id="jobId">-</strong></p>
+            <p>Status: <strong id="jobStatus">-</strong></p>
+
+            <div class="progress-track">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <p id="progressText">0% completed</p>
+
+            <div class="stats">
+                <div>
+                    <span id="totalCount">0</span>
+                    <small>Total</small>
+                </div>
+                <div>
+                    <span id="successCount">0</span>
+                    <small>Successful</small>
+                </div>
+                <div>
+                    <span id="failureCount">0</span>
+                    <small>Failed</small>
+                </div>
+            </div>
+
+            <button type="button" id="refreshStatus"
+                    class="secondary-button">
+                Refresh Status
+            </button>
+        </section>
+
+        <section class="card" id="certificatesSection" hidden>
+            <h2>Certificates</h2>
+            <p class="description">
+                Download successfully generated certificates individually.
+            </p>
+            <div id="certificatesList"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Bulk Certificate Generator · FastAPI and Python</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+    background: #f3f6fb;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.header {
+    background: #243b67;
+    color: white;
+    padding: 32px 20px;
+}
+
+.container {
+    width: min(100% - 32px, 900px);
+    margin: 0 auto;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #dbeafe;
+}
+
+main.container {
+    padding-top: 28px;
+    padding-bottom: 32px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e1e7f0;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 14px rgba(31, 41, 55, 0.04);
+}
+
+.card h2 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #64748b;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+#eventName {
+    margin-bottom: 24px;
+}
+
+.recipient-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.recipient-heading h3 {
+    font-size: 17px;
+}
+
+.recipient-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    margin-bottom: 12px;
+}
+
+.field {
+    min-width: 0;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 16px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.primary-button {
+    background: #2563eb;
+    color: white;
+    margin-top: 12px;
+}
+
+.primary-button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.secondary-button {
+    background: #e8efff;
+    color: #244a9b;
+}
+
+.secondary-button:hover:not(:disabled) {
+    background: #d8e5ff;
+}
+
+.remove-button {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.remove-button:hover:not(:disabled) {
+    background: #fecaca;
+}
+
+.message {
+    margin-top: 12px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.message.error {
+    color: #b91c1c;
+}
+
+.message.success {
+    color: #15803d;
+}
+
+#jobSection p {
+    margin-top: 8px;
+}
+
+.progress-track {
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    margin-top: 18px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #2563eb;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.stats div {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    padding: 16px;
+    text-align: center;
+}
+
+.stats span {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.stats small {
+    color: #64748b;
+}
+
+.certificate-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.certificate-item:last-child {
+    border-bottom: none;
+}
+
+.certificate-info {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.certificate-info p {
+    font-size: 14px;
+}
+
+.status-label {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status-generated {
+    color: #15803d;
+}
+
+.status-failed {
+    color: #b91c1c;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 650px) {
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .recipient-row {
+        grid-template-columns: 1fr;
+    }
+
+    .remove-button {
+        justify-self: start;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stats div {
+        padding: 12px 6px;
+    }
+
+    .stats span {
+        font-size: 21px;
+    }
+
+    .certificate-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
